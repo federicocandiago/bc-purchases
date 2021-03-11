@@ -1,0 +1,4 @@
+node_modules/
+*.csv
+yarn.lock
+package-lock.json
