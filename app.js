@@ -23,7 +23,14 @@ let DELAY = 120;
 
 const sanitiseForCsv = (string) => {return string ? string.replace(';', ' ') : ''} 
 
-
+const productType = (string) => {
+    switch (string) {
+        case 'a': return 'album';           
+        case 'b': return 'bundle';           
+        case 'p': return 'physical';           
+        case 't': return 'track';           
+        default: return string;
+}} 
 
 let timestamp = (Math.floor( Date.now() / (DURATION * 1000) ) * DURATION) - (DELAY);
 
@@ -52,7 +59,7 @@ const getPurchases = () =>  {
                             date.toLocaleTimeString() };${
                             sanitiseForCsv(item.artist_name) };${
                             sanitiseForCsv(item.item_description) };${
-                            item.item_type };${
+                            productType(item.item_type) };${
                             item.country };${
                             Number(item.item_price).toFixed(2) };${
                             item.currency };${
