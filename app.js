@@ -32,6 +32,8 @@ const productType = (string) => {
         default: return string;
 }} 
 
+
+
 let timestamp = (Math.floor( Date.now() / (DURATION * 1000) ) * DURATION) - (DELAY);
 
 const getPurchases = () =>  {
